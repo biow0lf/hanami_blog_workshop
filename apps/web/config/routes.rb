@@ -1,5 +1,6 @@
-# Configure your routes here
-# See: http://hanamirb.org/guides/routing/overview/
-#
-# Example:
-# get '/hello', to: ->(env) { [200, {}, ['Hello from Hanami!']] }
+get '/blogs', to: 'blogs#index'
+get '/blogs/:id', to: 'blogs#show'
+get '/blogs/new', to: 'blogs#new'
+post '/blogs', to: 'blogs#create'
+patch '/blogs/:id', to: 'blogs#update'
+delete '/blogs/:id', to: 'blogs#destroy'
