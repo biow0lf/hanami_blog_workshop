@@ -1,5 +1,5 @@
-module Web::Controllers::Blogs
-  class Update
+module Web::Controllers::Posts
+  class Create
     include Web::Action
 
     def call(params)

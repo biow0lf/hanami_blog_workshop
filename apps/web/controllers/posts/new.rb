@@ -1,5 +1,5 @@
-module Web::Controllers::Blogs
-  class Index
+module Web::Controllers::Posts
+  class New
     include Web::Action
 
     def call(params)

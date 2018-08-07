@@ -1,4 +1,4 @@
-module Web::Controllers::Blogs
+module Web::Controllers::Posts
   class Destroy
     include Web::Action
 

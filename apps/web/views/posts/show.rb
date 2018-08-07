@@ -1,4 +1,4 @@
-module Web::Views::Blogs
+module Web::Views::Posts
   class Show
     include Web::View
   end
