@@ -34,4 +34,20 @@ RSpec.describe Web.routes do
 
     expect(actual).to eq('/posts/new')
   end
+
+  it 'recognizes "PATCH /posts/23"' do
+    env = Rack::MockRequest.env_for('/posts/23', method: :patch)
+
+    route = described_class.recognize(env)
+
+    expect(route).to be_routable
+
+    expect(route.path).to eq('/posts/23')
+
+    expect(route.verb).to eq('PATCH')
+
+    expect(route.params).to eq(id: '23')
+
+    expect(route.action).to eq('web_controllers/posts#update')
+  end
 end
