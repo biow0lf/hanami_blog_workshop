@@ -1,6 +1,3 @@
-get '/posts', to: 'posts#index'
-get '/posts/:id', to: 'posts#show'
-get '/posts/new', to: 'posts#new'
-post '/posts', to: 'posts#create'
-patch '/posts/:id', to: 'posts#update'
-delete '/posts/:id', to: 'posts#destroy'
+root to: 'posts#index'
+
+resources :posts
