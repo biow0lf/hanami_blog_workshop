@@ -1,4 +1,4 @@
-RSpec.describe Web::Controllers::Blogs::New, type: :action do
+RSpec.describe Web::Controllers::Posts::Index, type: :action do
   let(:action) { described_class.new }
   let(:params) { Hash[] }
 

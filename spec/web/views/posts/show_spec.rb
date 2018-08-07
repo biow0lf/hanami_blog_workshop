@@ -1,6 +1,6 @@
-RSpec.describe Web::Views::Blogs::New, type: :view do
+RSpec.describe Web::Views::Posts::Show, type: :view do
   let(:exposures) { Hash[format: :html] }
-  let(:template)  { Hanami::View::Template.new('apps/web/templates/blogs/new.html.erb') }
+  let(:template)  { Hanami::View::Template.new('apps/web/templates/posts/show.html.erb') }
   let(:view)      { described_class.new(template, exposures) }
   let(:rendered)  { view.render }
 
