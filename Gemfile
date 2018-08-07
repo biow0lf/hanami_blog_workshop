@@ -5,6 +5,7 @@ gem 'hanami',       '~> 1.2'
 gem 'hanami-model', '~> 1.2'
 
 gem 'pg'
+gem 'pry'
 
 group :development do
   # Code reloading
