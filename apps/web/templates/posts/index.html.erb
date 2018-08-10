@@ -2,8 +2,6 @@
 
 <div>
   <% posts.each do |post| %>
-    <h2><%= post.title %></h2>
-
-    <p><%= post.body %></p>
+    <%= render partial: 'post', locals: { post: post } %>
   <% end %>
 </div>
