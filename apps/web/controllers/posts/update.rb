@@ -1,13 +1,10 @@
+require_relative './post_params'
+
 module Web::Controllers::Posts
   class Update
     include Web::Action
 
-    params do
-      required(:post).schema do
-        required(:title).filled(:str?)
-        required(:body).filled(:str?)
-      end
-    end
+    params PostParams
 
     def initialize(repository: PostRepository.new)
       @repository = repository
