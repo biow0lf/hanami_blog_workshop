@@ -11,4 +11,22 @@
   </div>
 <% end %>
 
-<%= render partial: 'form' %>
+<%=
+
+  form_for :post, routes.path(:posts) do
+    div do
+      label :title
+      text_field :title
+    end
+
+    div do
+      label :body
+      text_field :body
+    end
+
+    div do
+      submit 'Create new post'
+    end
+  end
+
+%>
