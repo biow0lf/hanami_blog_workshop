@@ -1,0 +1,21 @@
+<h1>Edit post with ID: <%= post.id %></h1>
+
+<%=
+
+  form_for :post, routes.path(:post, id: post.id), method: :patch, values: { post: post } do
+    div do
+      label :title
+      text_field :title
+    end
+
+    div do
+      label :body
+      text_field :body
+    end
+
+    div do
+      submit 'Update post'
+    end
+  end
+
+%>
