@@ -2,14 +2,25 @@ module Web::Controllers::Posts
   class Create
     include Web::Action
 
+    params do
+      required(:post).schema do
+        required(:title).filled(:str?)
+        required(:body).filled(:str?)
+      end
+    end
+
     def initialize(repository: PostRepository.new)
       @repository = repository
     end
 
     def call(params)
-      post = @repository.create(params[:post])
+      if params.valid?
+        post = @repository.create(params[:post])
 
-      redirect_to routes.path(:post, id: post.id)
+        redirect_to routes.path(:post, id: post.id)
+      else
+        # Code to handle 422
+      end
     end
   end
 end
