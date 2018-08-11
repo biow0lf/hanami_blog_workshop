@@ -18,8 +18,6 @@ module Web::Controllers::Posts
         post = @repository.create(params[:post])
 
         redirect_to routes.path(:post, id: post.id)
-      else
-        # Code to handle 422
       end
     end
   end

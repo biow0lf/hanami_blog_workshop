@@ -1,5 +1,16 @@
 <h1>New post</h1>
 
+<% unless params.valid? %>
+  <div>
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%=
 
 form_for :post, routes.posts_path do
