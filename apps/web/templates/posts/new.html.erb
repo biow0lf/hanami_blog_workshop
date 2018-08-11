@@ -1,0 +1,21 @@
+<h1>New post</h1>
+
+<%=
+
+form_for :post, routes.posts_path do
+  div do
+    label :title
+    text_field :title
+  end
+
+  div do
+    label :body
+    text_field :body
+  end
+
+  div do
+    submit 'Create new post'
+  end
+end
+
+%>
