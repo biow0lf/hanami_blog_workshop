@@ -1,7 +1,7 @@
 RSpec.describe Web::Views::Posts::Show, type: :view do
   let(:template) { Hanami::View::Template.new('apps/web/templates/posts/show.html.erb') }
 
-  let(:exposures) { Hash[post: double('post', title: 'Hello', body: 'World'), params: { id: 1 }, format: :html] }
+  let(:exposures) { Hash[post: double('post', id: 1, title: 'Hello', body: 'World'), params: { id: 1 }, format: :html] }
 
   let(:view) { described_class.new(template, exposures) }
 
@@ -12,7 +12,7 @@ RSpec.describe Web::Views::Posts::Show, type: :view do
   end
 
   it 'show post title' do
-    expect(rendered).to include('<h2>Hello</h2>')
+    expect(rendered).to include('<h2>1: Hello</h2>')
   end
 
   it 'show post body' do
